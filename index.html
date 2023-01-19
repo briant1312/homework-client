@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
     <script type="module" src="./scripts/app.js" defer></script>
     <title>People Tracker</title>
 </head>
 <body>
+    <div id="user-message-container"></div>
+    <form class="create-new-person">
+        <h2>New Person Form</h2>
+        <input type="text" name="firstName" placeholder="First Name">
+        <input type="text" name="lastName" placeholder="Last Name">
+        <input type="number" name="age" placeholder="Age">
+        <label for="employment-status">Employment Status</label>
+        <select name="employment-status" id="employment-status">
+            <option value="employed">Employed</option>
+            <option value="unemployed">Unemployed</option>
+        </select>
+        <input type="submit" id="submit-form-button">
+    </form>
     <div class="people-container"></div>
     
 </body>

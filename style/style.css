@@ -1,0 +1,22 @@
+.person-index {
+    border-bottom: 1px solid black;
+    padding-bottom: 1rem;
+}
+
+.create-new-person {
+    border-bottom: 1px solid black;
+}
+
+.create-new-person input,
+.create-new-person select{
+    display: block;
+    margin-bottom: .5rem;
+}
+
+#submit-form-button {
+    margin: 2rem 0;
+}
+
+#user-message-container {
+    text-align: center;
+}
