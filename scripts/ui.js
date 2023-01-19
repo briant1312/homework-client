@@ -28,11 +28,9 @@ export const onFailure = (error) => {
 
 export const onShowPersonSuccess = (personData, button) => {
     const currentUserInfo = document.querySelectorAll('.full-user-info')
-    if(currentUserInfo) {
-        currentUserInfo.forEach(entry => {
-            entry.parentElement.removeChild(entry)
-        })
-    }
+    currentUserInfo.forEach(entry => {
+        entry.parentElement.removeChild(entry)
+    })
     const { firstName, lastName, age, isEmployed} = personData.person
     const div = document.createElement('div')
     div.innerHTML = 
@@ -41,7 +39,28 @@ export const onShowPersonSuccess = (personData, button) => {
     <p>Last Name: ${lastName}</p>
     <p>Age: ${age}</p>
     <p>Employed: ${isEmployed}</p>
+
+    <button class="delete-character" data-id="${personData.person._id}">Delete Person</button>
+
+    <form data-id="${personData.person._id}">
+        <input type="text" name="firstName" value="${firstName}" >
+        <input type="text" name="lastName" value="${lastName}" >
+        <input type="number" name="age" value="${age}" >
+        <select name="employment-status" id="employment-status">
+            <option value="employed">Employed</option>
+            <option value="unemployed">Unemployed</option>
+        </select>
+        <input type="submit" value="Update Person">
+    </form>
     `
     div.classList.add('full-user-info')
     button.parentElement.insertBefore(div, button)
+}
+
+export const onUpdatePersonSuccess = () => {
+    userMessageContainer.innerText = 'You have successfully updated a person'
+}
+
+export const onDeletePersonSuccess = () => {
+    userMessageContainer.innerText = 'You have successfully deleted a person'
 }
